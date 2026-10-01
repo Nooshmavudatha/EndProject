@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Report - SRMS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-nav">
+
+    <div class="logo">SRMS</div>
+
+    <button onclick="logout()" class="logout-btn">
+        Logout
+    </button>
+
+</header>
+
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>User Panel</h3>
+
+        <a href="user.html">Dashboard</a>
+        <a href="profile.html">Profile</a>
+        <a href="user-marks.html">Marks</a>
+        <a href="user-attendance.html">Attendance</a>
+        <a href="user-report.html" class="active">
+            Report
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <h1>Academic Report</h1>
+
+        <div class="report-card">
+
+            <h2 id="reportName">Student Report</h2>
+
+            <div class="report-details">
+
+                <p>
+                    Username:
+                    <strong id="reportUsername"></strong>
+                </p>
+
+                <p>
+                    Total Marks:
+                    <strong id="reportTotal">0</strong>
+                </p>
+
+                <p>
+                    Percentage:
+                    <strong id="reportPercentage">0%</strong>
+                </p>
+
+                <p>
+                    Grade:
+                    <strong id="reportGrade">-</strong>
+                </p>
+
+                <p>
+                    Result:
+                    <strong id="reportResult">-</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="common.js"></script>
+<script src="user.js"></script>
+
+</body>
+</html>

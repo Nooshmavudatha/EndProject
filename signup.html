@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - SRMS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+    <div class="auth-left">
+
+        <div class="logo large">SRMS</div>
+
+        <h1>Create Your Account</h1>
+
+        <p>
+            Register to access the Student Report
+            Management System.
+        </p>
+
+        <div class="auth-points">
+            <p>✓ Secure login</p>
+            <p>✓ Easy student management</p>
+            <p>✓ View academic reports</p>
+        </div>
+
+    </div>
+
+
+    <div class="auth-right">
+
+        <form id="signupForm" class="form-box">
+
+            <h2>Sign Up</h2>
+            <p class="form-subtitle">
+                Create a new user account
+            </p>
+
+            <label>Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+            >
+
+            <label>Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Choose a username"
+            >
+
+            <label>Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+            <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Create password"
+            >
+
+            <label>Confirm Password</label>
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+            >
+
+            <p id="signupMessage" class="message"></p>
+
+            <button type="submit" class="full-btn">
+                Create Account
+            </button>
+
+            <p class="bottom-text">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="signup.js"></script>
+
+</body>
+</html>

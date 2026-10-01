@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login - SRMS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+    <div class="auth-left">
+
+        <div class="logo large">SRMS</div>
+
+        <h1>Welcome Back!</h1>
+
+        <p>
+            Login to access the Student Report
+            Management System.
+        </p>
+
+        <div class="auth-points">
+            <p>✓ Manage student records</p>
+            <p>✓ Track marks and attendance</p>
+            <p>✓ View academic reports</p>
+        </div>
+
+    </div>
+
+
+    <div class="auth-right">
+
+        <form id="loginForm" class="form-box">
+
+            <h2>Login</h2>
+
+            <p class="form-subtitle">
+                Enter your account details
+            </p>
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+            >
+
+
+            <label>Password</label>
+
+            <div class="password-field">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                >
+
+                <button
+                    type="button"
+                    id="showPassword">
+                    Show
+                </button>
+
+            </div>
+
+            <p id="loginMessage" class="message"></p>
+
+            <button type="submit" class="full-btn">
+                Login
+            </button>
+
+            <p class="bottom-text">
+                Don't have an account?
+                <a href="signup.html">Create Account</a>
+            </p>
+
+            <div class="demo-login">
+                <strong>Demo Admin</strong><br>
+                Username: admin<br>
+                Password: admin123
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

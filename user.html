@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard - SRMS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="dashboard-nav">
+
+    <div class="logo">SRMS</div>
+
+    <div>
+
+        <span id="userName"></span>
+
+        <button onclick="logout()" class="logout-btn">
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>User Panel</h3>
+
+        <a href="user.html" class="active">
+            Dashboard
+        </a>
+
+        <a href="profile.html">
+            Profile
+        </a>
+
+        <a href="user-marks.html">
+            Marks
+        </a>
+
+        <a href="user-attendance.html">
+            Attendance
+        </a>
+
+        <a href="user-report.html">
+            Report
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <h1>Welcome, <span id="welcomeName"></span></h1>
+
+        <p class="page-description">
+            View your academic information.
+        </p>
+
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card">
+                <span>📊</span>
+                <h3>Marks</h3>
+                <strong><a href="user-marks.html">View</a></strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📅</span>
+                <h3>Attendance</h3>
+                <strong><a href="user-attendance.html">View</a></strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📄</span>
+                <h3>Report</h3>
+                <strong><a href="user-report.html">View</a></strong>
+            </div>
+
+        </div>
+
+
+        <div class="content-card">
+
+            <h2>Quick Access</h2>
+
+            <div class="quick-grid">
+
+                <a href="profile.html">
+                    My Profile
+                </a>
+
+                <a href="user-marks.html">
+                    My Marks
+                </a>
+
+                <a href="user-attendance.html">
+                    My Attendance
+                </a>
+
+                <a href="user-report.html">
+                    My Report
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="common.js"></script>
+<script src="user.js"></script>
+
+</body>
+</html>

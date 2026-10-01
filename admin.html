@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - SRMS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="dashboard-nav">
+
+    <div class="logo">SRMS</div>
+
+    <div>
+        <span id="adminName"></span>
+        <button onclick="logout()" class="logout-btn">
+            Logout
+        </button>
+    </div>
+
+</header>
+
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <h3>Admin Panel</h3>
+
+        <a href="admin.html" class="active">
+            Dashboard
+        </a>
+
+        <a href="students.html">
+            Students
+        </a>
+
+        <a href="marks.html">
+            Marks
+        </a>
+
+        <a href="attendance.html">
+            Attendance
+        </a>
+
+        <a href="reports.html">
+            Reports
+        </a>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <h1>Admin Dashboard</h1>
+
+        <p class="page-description">
+            Manage student academic information.
+        </p>
+
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card">
+                <span>👨‍🎓</span>
+                <h3>Total Students</h3>
+                <strong id="totalStudents">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📝</span>
+                <h3>Marks Records</h3>
+                <strong id="totalMarks">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📅</span>
+                <h3>Attendance</h3>
+                <strong id="totalAttendance">0</strong>
+            </div>
+
+            <div class="stat-card">
+                <span>📊</span>
+                <h3>Reports</h3>
+                <strong>Available</strong>
+            </div>
+
+        </div>
+
+
+        <div class="content-card">
+
+            <h2>Quick Actions</h2>
+
+            <div class="quick-grid">
+
+                <a href="students.html">
+                    Add / Manage Students
+                </a>
+
+                <a href="marks.html">
+                    Enter Marks
+                </a>
+
+                <a href="attendance.html">
+                    Manage Attendance
+                </a>
+
+                <a href="reports.html">
+                    View Reports
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="common.js"></script>
+<script src="admin.js"></script>
+
+</body>
+</html>
