@@ -1,143 +1,94 @@
-const marksForm =
-    document.getElementById("marksForm");
+const marksForm = document.getElementById("marksForm");
+const markStudent = document.getElementById("markStudent");
+const marksTable = document.getElementById("marksTable");
 
-const markStudent =
-    document.getElementById("markStudent");
-
-const marksTable =
-    document.getElementById("marksTable");
-
-
-let students =
-    JSON.parse(
-        localStorage.getItem("students")
-    ) || [];
-
-
-let marks =
-    JSON.parse(
-        localStorage.getItem("marks")
-    ) || [];
-
-
-/* Load students */
+let students = JSON.parse(localStorage.getItem("students")) || [];
+let marks = JSON.parse(localStorage.getItem("marks")) || [];
 
 students.forEach(function(student, index) {
-
-    const option =
-        document.createElement("option");
-
+    const option = document.createElement("option");
     option.value = index;
-
-    option.textContent =
-        student.name +
-        " - " +
-        student.rollNo;
-
+    option.textContent = student.name + " - " + student.rollNo;
     markStudent.appendChild(option);
-
 });
 
-
-/* Display marks */
-
 function displayMarks() {
-
     marksTable.innerHTML = "";
 
-
-    marks.forEach(function(record) {
-
-        const row =
-            document.createElement("tr");
-
+    marks.forEach(function(record, index) {
+        const row = document.createElement("tr");
 
         row.innerHTML = `
-
             <td>${record.student}</td>
-
             <td>${record.subject}</td>
-
             <td>${record.marks}</td>
-
+            <td>
+                <button type="button" class="delete-btn" onclick="deleteMark(${index})">
+                    Delete
+                </button>
+            </td>
         `;
 
-
         marksTable.appendChild(row);
-
     });
-
 }
 
+marksForm.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-/* Save marks */
+    const selectedIndex = markStudent.value;
+    const student = students[selectedIndex];
 
-marksForm.addEventListener(
-    "submit",
-    function(event) {
+    const subject = document.getElementById("subject").value.trim();
+    const markValue = document.getElementById("marks").value;
 
-        event.preventDefault();
+    if (!student) {
+        alert("Please select a student.");
+        return;
+    }
 
+    if (!subject) {
+        alert("Please enter the subject.");
+        return;
+    }
 
-        const selectedIndex =
-            markStudent.value;
+    if (markValue === "") {
+        alert("Please enter marks.");
+        return;
+    }
 
+    const markNumber = Number(markValue);
 
-        const student =
-            students[selectedIndex];
+    if (markNumber < 0 || markNumber > 100) {
+        alert("Marks must be between 0 and 100.");
+        return;
+    }
 
+    marks.push({
+        student: student.name,
+        rollNo: student.rollNo,
+        subject: subject,
+        marks: markNumber
+    });
 
-        const subject =
-            document
-            .getElementById("subject")
-            .value.trim();
+    localStorage.setItem("marks", JSON.stringify(marks));
 
+    marksForm.reset();
+    displayMarks();
 
-        const markValue =
-            document
-            .getElementById("marks")
-            .value;
+    alert("Marks saved successfully!");
+});
 
+function deleteMark(index) {
+    if (confirm("Are you sure you want to delete this mark?")) {
+        marks.splice(index, 1);
 
-        if (!student) {
-
-            alert("Please select a student.");
-
-            return;
-        }
-
-
-        marks.push({
-
-            student:
-                student.name,
-
-            rollNo:
-                student.rollNo,
-
-            subject:
-                subject,
-
-            marks:
-                Number(markValue)
-
-        });
-
-
-        localStorage.setItem(
-            "marks",
-            JSON.stringify(marks)
-        );
-
-
-        marksForm.reset();
+        localStorage.setItem("marks", JSON.stringify(marks));
 
         displayMarks();
 
-        alert("Marks saved successfully!");
-
+        alert("Mark deleted successfully!");
     }
-);
-
+}
 
 displayMarks();
